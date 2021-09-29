@@ -69,3 +69,27 @@ public class Employee {
 					model.addRow(columnData);
 				}
 			}
+			catch(Exception e)
+			{
+				JOptionPane.showMessageDialog(null, e);
+			}
+		}
+
+	}
+
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Employee window = new Employee();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+/**
+ * Create the application.
+ */

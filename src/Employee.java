@@ -306,3 +306,28 @@ public Employee() {
 				jtxtSalary.setText(null);
 			}
 		});
+		btnPrint.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnPrint.setBounds(724, 471, 164, 39);
+		frame.getContentPane().add(btnPrint);
+		
+		JButton btnExit_1 = new JButton("Exit");
+		btnExit_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				frame = new JFrame("Exit");
+				if (JOptionPane.showConfirmDialog(frame,"confirm if you want to exit","Employee Database System",
+						JOptionPane.YES_NO_OPTION)==JOptionPane.YES_NO_OPTION){
+					System.exit(0);
+		}
+			}
+		});
+		btnExit_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnExit_1.setBounds(1034, 471, 164, 39);
+		frame.getContentPane().add(btnExit_1);
+		
+		JLabel lblNewLabel_1 = new JLabel("EMPLOYEE DATABASE MANAGEMENT SYSTEM");
+		lblNewLabel_1.setFont(new Font("Calibri", Font.BOLD, 25));
+		lblNewLabel_1.setBounds(139, 31, 494, 55);
+		frame.getContentPane().add(lblNewLabel_1);
+	}
+}

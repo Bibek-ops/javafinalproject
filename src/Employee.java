@@ -183,3 +183,68 @@ public Employee() {
 		frame.getContentPane().add(scrollPane);
 
 		table = new JTable();
+		table.setModel(new DefaultTableModel(
+				new Object[][] {
+						{"", null, null, null, null, null, null, null},
+				},
+				new String[] {
+						"EmpID", "NINumber", "Firstname", "Surname", "Gender", "DOB", "Age", "Salary"
+				}
+		));
+		table.setFont(new Font("Tahoma", Font.BOLD, 14));
+		scrollPane.setViewportView(table);
+
+		JLabel lblNinumber = new JLabel("NINumber");
+		lblNinumber.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblNinumber.setBounds(150, 139, 141, 26);
+		frame.getContentPane().add(lblNinumber);
+
+		JLabel lblFirstname = new JLabel("Firstname");
+		lblFirstname.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblFirstname.setBounds(150, 175, 141, 26);
+		frame.getContentPane().add(lblFirstname);
+
+		JLabel lblSurname = new JLabel("Surname");
+		lblSurname.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblSurname.setBounds(150, 211, 141, 26);
+		frame.getContentPane().add(lblSurname);
+
+		JLabel lblSurname_1 = new JLabel("Gender");
+		lblSurname_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblSurname_1.setBounds(150, 247, 141, 26);
+		frame.getContentPane().add(lblSurname_1);
+
+		JLabel lblDob = new JLabel("DOB");
+		lblDob.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblDob.setBounds(150, 283, 141, 26);
+		frame.getContentPane().add(lblDob);
+
+		JLabel Age = new JLabel("Age");
+		Age.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		Age.setBounds(150, 319, 141, 26);
+		frame.getContentPane().add(Age);
+
+		JLabel lblSalary = new JLabel("Salary");
+		lblSalary.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblSalary.setBounds(150, 355, 141, 26);
+		frame.getContentPane().add(lblSalary);
+
+		jtxtNINumber = new JTextField();
+		jtxtNINumber.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		jtxtNINumber.setColumns(10);
+		jtxtNINumber.setBounds(343, 135, 219, 34);
+		frame.getContentPane().add(jtxtNINumber);
+
+		jtxtFirstname = new JTextField();
+		jtxtFirstname.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		jtxtFirstname.setColumns(10);
+		jtxtFirstname.setBounds(343, 171, 219, 34);
+		frame.getContentPane().add(jtxtFirstname);
+
+		jtxtSurname = new JTextField();
+		jtxtSurname.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		jtxtSurname.setColumns(10);
+		jtxtSurname.setBounds(343, 207, 219, 34);
+		frame.getContentPane().add(jtxtSurname);
+
+		jtxtGender = new JTextField();

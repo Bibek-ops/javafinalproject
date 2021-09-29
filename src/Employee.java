@@ -248,3 +248,61 @@ public Employee() {
 		frame.getContentPane().add(jtxtSurname);
 
 		jtxtGender = new JTextField();
+		jtxtGender.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		jtxtGender.setColumns(10);
+		jtxtGender.setBounds(343, 243, 219, 34);
+		frame.getContentPane().add(jtxtGender);
+		
+		jtxtDOB = new JTextField();
+		jtxtDOB.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		jtxtDOB.setColumns(10);
+		jtxtDOB.setBounds(343, 279, 219, 34);
+		frame.getContentPane().add(jtxtDOB);
+		
+		jtxtAge = new JTextField();
+		jtxtAge.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		jtxtAge.setColumns(10);
+		jtxtAge.setBounds(343, 315, 219, 34);
+		frame.getContentPane().add(jtxtAge);
+		
+		jtxtSalary = new JTextField();
+		jtxtSalary.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		jtxtSalary.setColumns(10);
+		jtxtSalary.setBounds(343, 351, 219, 34);
+		frame.getContentPane().add(jtxtSalary);
+		
+		JButton btnExit = new JButton("Print");
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				MessageFormat header = new MessageFormat("printing in Progress");
+				MessageFormat footer = new MessageFormat("page {0, number, integer}");
+				
+				try
+				{
+					table.print();
+				}
+				catch(java.awt.print.PrinterException ev) {
+					System.err.format("No printer found",ev.getMessage());
+				}
+			}
+			
+		});
+		btnExit.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnExit.setBounds(427, 471, 164, 39);
+		frame.getContentPane().add(btnExit);
+		
+		JButton btnPrint = new JButton("Reset");
+		btnPrint.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				jtxtEmployeeID.setText(null);
+				jtxtNINumber.setText(null);
+				jtxtFirstname.setText(null);
+				jtxtSurname.setText(null);
+				jtxtGender.setText(null);
+				jtxtDOB.setText(null);
+				jtxtAge.setText(null);
+				jtxtSalary.setText(null);
+			}
+		});

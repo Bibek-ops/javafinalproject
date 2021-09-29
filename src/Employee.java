@@ -156,3 +156,30 @@ public Employee() {
 						jtxtSalary.getText(),
 
 				});
+				if(table.getSelectedRow() == -1) {
+					if (table.getRowCount() == 0) {
+						JOptionPane.showMessageDialog(null, "Membership UPdate confirmed","Employee Database System",
+								JOptionPane.OK_OPTION);
+					}
+
+				}
+			}
+
+		});
+
+
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnNewButton.setBounds(115, 471, 164, 39);
+		frame.getContentPane().add(btnNewButton);
+
+		jtxtEmployeeID = new JTextField();
+		jtxtEmployeeID.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		jtxtEmployeeID.setBounds(343, 99, 219, 34);
+		frame.getContentPane().add(jtxtEmployeeID);
+		jtxtEmployeeID.setColumns(10);
+
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(681, 31, 686, 350);
+		frame.getContentPane().add(scrollPane);
+
+		table = new JTable();

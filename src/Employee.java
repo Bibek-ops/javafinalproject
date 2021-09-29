@@ -122,3 +122,37 @@ public Employee() {
 				String sql ="INSERT INTO employee(EmpID,NINumber,Firstname,Surname,Gender,DOB,Age,Salary)VALUES(?,?,?,?,?,?,?,?)";
 
 				try
+				{
+					pst = conn.prepareStatement(sql);
+					pst.setString(1, jtxtEmployeeID.getText());
+					pst.setString(2, jtxtNINumber.getText());
+					pst.setString(3, jtxtFirstname.getText());
+					pst.setString(4, jtxtSurname.getText());
+					pst.setString(5, jtxtGender.getText());
+					pst.setString(6, jtxtDOB.getText());
+					pst.setString(7, jtxtAge.getText());
+					pst.setString(8, jtxtSalary.getText());
+
+					pst.execute();
+
+					rs.close();
+					pst.close();
+				}
+				catch(Exception ev)
+				{
+					JOptionPane.showMessageDialog(null, "System Update COmpleted");
+				}
+
+				DefaultTableModel model =(DefaultTableModel) table.getModel();
+				model .addRow(new Object[] {
+
+						jtxtEmployeeID.getText(),
+						jtxtNINumber.getText(),
+						jtxtFirstname.getText(),
+						jtxtSurname.getText(),
+						jtxtGender.getText(),
+						jtxtDOB.getText(),
+						jtxtAge.getText(),
+						jtxtSalary.getText(),
+
+				});

@@ -93,3 +93,32 @@ public class Employee {
 /**
  * Create the application.
  */
+public Employee() {
+	initialize();
+
+	conn = EmployeeData.ConnectDB();
+	Object col[] = {"EmpID", "NINumber","Firstname","Surname","Gender","DOB","Age","Salary"};
+	model.setColumnIdentifiers(col);
+}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(0, 0, 1450, 800);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+
+		JLabel lblNewLabel = new JLabel("Employee ID");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblNewLabel.setBounds(150, 103, 141, 26);
+		frame.getContentPane().add(lblNewLabel);
+
+		JButton btnNewButton = new JButton("Add new");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				String sql ="INSERT INTO employee(EmpID,NINumber,Firstname,Surname,Gender,DOB,Age,Salary)VALUES(?,?,?,?,?,?,?,?)";
+
+				try
